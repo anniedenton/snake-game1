@@ -52,15 +52,19 @@ function create() {
         addHead();
         addFood();
 
-       score = score + 10;
+        score = score + 10;
 
         let points = document.getElementsByTagName("span")[0];
         points.innerHTML = score;
     }
 
     if(selfCollide()) {
-        alert("You lost!");
+        alert("You lost! Play again?");
         clearInterval(timer);
+        score = 0;
+        let points = document.getElementsByTagName("span")[0];
+        points.innerHTML = score;
+        timer = setInterval(create, 100);
     }
     addHead();
 
