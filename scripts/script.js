@@ -64,6 +64,9 @@ function create() {
         score = 0;
         let points = document.getElementsByTagName("span")[0];
         points.innerHTML = score;
+        while(snake.length > 2) {
+            snake.shift();
+        }
         timer = setInterval(create, 100);
     }
     addHead();
